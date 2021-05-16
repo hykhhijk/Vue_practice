@@ -4,11 +4,11 @@
   <form class=" text-center w-25 mx-auto">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" v-model="id">
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" v-model="password">
       <label for="floatingPassword">Password</label>
     </div>
 
@@ -17,7 +17,7 @@
         <input type="checkbox" value="remember-me"> Remember me
       </label>
     </div>
-    <button @click="test" class="w-100 btn btn-lg btn-primary" type="button">Sign in</button>       <!--type = "button" or "submit"를 번갈아가면 송신값 test-->
+    <button @click="posttest" class="w-100 btn btn-lg btn-primary" type="button">Sign in</button>       <!--type = "button" or "submit"를 번갈아가면 송신값 test-->
     <p class="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
 
   </form>
@@ -33,6 +33,10 @@
   // const axios = require('axios');
 
 export default {
+  data: ()=>({
+    id:'',
+    password:''
+  }),
   methods:{
 test(){
 // Make a request for a user with a given ID
@@ -52,8 +56,8 @@ axios.get('https://reqres.in/api/접속하고 싶은 URL적는 곳')
 },
 posttest(){
   axios.post('https://reqres.in/api/register', {
-    email: "eve.holt@reqres.in",
-    password: "pistol"
+    email: this.id,
+    password: this.password
 })
   .then(response => {
     console.log(response);

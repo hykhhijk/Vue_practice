@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
+// import 'expose-loader?$!expose-loader?jQuery!jquery'
+  //jquery사용
 import router from './router'           //router 사용
 import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'     //3~14 booystrap code
 

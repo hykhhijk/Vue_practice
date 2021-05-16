@@ -17,18 +17,21 @@
     </div>
     <div class="col"></div>
   </div>
-  <div class="row">
-    <div class="col text-center">
-      <a href="#link" class="btn btn-secondary btn-lg center center-block mt-5" role="button">Link Button</a>       <!--button작을 시 grid로 공간 나눠서 블록레벨로 지정-->
+  <div class="row"  style="margin:5% auto">
+    <div class="col-4 text-center">
+      <b-button v-b-modal.paper size="lg" style="width:66%">종이</b-button>            <!--이 부분만 jquery땜에 v-B사용 -> variant="primary" 형태로 모양 적용-->
+      <b-modal id="paper" size="lg" title="Large Modal"><img src="../image/search/paper.jpg" width="100%"></b-modal>    
     </div>
-    <div class="col text-center">
-      <a href="#link" class="btn btn-secondary btn-lg center center-block mt-5" role="button">Link Button</a>
+    <div class="col-4 text-center">
+      <b-button v-b-modal.plastic size="lg" style="width:66%">종이팩</b-button>           
+      <b-modal id="plastic" size="lg" title="Large Modal"><img src="../image/search/pack.jpg" width="100%"></b-modal>   <!--button작을 시 grid로 공간 나눠서 블록레벨로 지정-->
     </div>
-    <div class="col text-center">
+    <div class="col-4 text-center">
       <a href="#link" class="btn btn-secondary btn-lg center center-block mt-5" role="button">Link Button</a>
     </div>
   </div>
 </div>
+
 
 </template>
 
@@ -48,11 +51,10 @@
     font-family:'맑은 고딕', 'Malgun Gothic', Gothic, sans-serif;
 } */
   table{
-    margin: 3% auto;
+    margin: 10% auto;
     width: 90%;
     height: 100px;
     background-color: lightgray;
-    margin-bottom: 50px;
 }
   table td{
     text-align: center;
